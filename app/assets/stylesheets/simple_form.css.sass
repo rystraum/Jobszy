@@ -1,0 +1,212 @@
+// Default styling for simple_form
+// Requires the semantic_grid gem.
+
+// Uncomment any constant not defined in superceding stylesheet:
+// $COLOR-ERROR: red
+
+$ADJACENT_LABEL_WIDTH: 50px
+$INSTRUCTION_COLOR: #796D6F
+$SPACE_BETWEEN_INPUTS: 3em
+$COLOR-TEXT_OFFSET: #0678BE
+
+$LABEL-MARGIN-LEFT-COLUMNS: 1
+$LABEL-COLUMNS: 5
+$INPUT-COLUMNS: 6
+
+.simple_form 
+
+    
+  // The required astrisk
+  abbr[title='required'] 
+    border-bottom: none
+    color: red
+    margin-left: -0.6em
+    position: relative
+    top: 0.2em
+  
+
+  fieldset 
+    margin-top: 1em
+  
+
+  legend 
+    font-weight: bold
+    color: $COLOR-TEXT_OFFSET
+  
+  .unit
+    color: $INSTRUCTION_COLOR
+
+
+  // LABELS
+
+  label
+    +grid($LABEL-COLUMNS)
+    +prefix($LABEL-MARGIN-LEFT-COLUMNS)
+    color: $INSTRUCTION_COLOR
+    font-weight: bold
+ 
+  // Center label on textbox
+  .input.string,
+  .input.password
+    label
+      padding-top: 9px
+
+  label.boolean,
+  label.collection_radio, 
+  label.collection_check_boxes
+    font-weight: normal
+    color: inherit
+    padding-left: 0
+
+  
+  label.collection_radio, 
+  label.collection_check_boxes
+    float: none
+    margin-right: 20px
+    vertical-align: -4px
+
+  label.collection_radio 
+    margin-left:   2px
+
+  label.collection_check_boxes 
+    margin-left: 5px
+  
+  label.text
+    width: 100%
+    margin-bottom: 4px
+
+
+
+  // INPUTS
+
+  // Give inputs some space
+  .input
+    margin-bottom: 40px
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='tel'],
+  textarea,
+  input.boolean
+    +border-radius(3px)
+    +box-shadow(inset 0 1px 3px rgba(0, 0, 0, 0.1))
+    border: 1px solid silver
+    padding: 10px 5px
+    color: $BLUE
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='tel'],
+  input.boolean,
+  select,
+  .input.check_boxes > span,
+  .input.radio > span
+    +grid($INPUT-COLUMNS)
+
+  // Don't stretch these elements across the column. Return them to original width.
+  select,
+  .input.check_boxes > span,
+  .input.radio > span
+    width: inherit
+  
+  // Vertically allign inputs and labels
+  // Not sure this will work when checkboxes flow to second line.
+  // Other solutions: http://stackoverflow.com/questions/306252/how-to-align-checkboxes-and-their-labels-consistently-cross-browsers
+  .input.check_boxes *,
+  .input.radio *
+    vertical-align: middle
+  
+  // Add space between radio and label
+  input.radio 
+    margin-right: 5px
+  
+  textarea, 
+  .input.text span.hint
+    float: none
+    +grid(14)
+    +push(1)
+
+  textarea
+    resize: none
+
+  .input
+    margin-top: 1.5em
+    +clearfix
+  div.input.boolean.optional
+    margin-top: 0.5em
+
+  // Position boolean checkbox input in the input column followed by its label.
+  .input.boolean
+    +grid($INPUT-COLUMNS)
+    +push($LABEL-MARGIN-LEFT-COLUMNS + $LABEL-COLUMNS)
+    input, label
+      padding: 0 !important
+      margin: 0 !important
+      float: none !important
+      width: 15px !important
+    
+  .error 
+    clear:   left
+    color:   black
+    display: block
+    margin-left: 120px
+    font-size:    12px
+  
+  #error_explanation, .field_with_errors label
+    color: $COLOR-ERROR
+  
+  .instruction 
+    margin-bottom: 20px
+    color: $INSTRUCTION_COLOR
+    display: block
+    font-size: 0.95em
+    p 
+      margin: 0
+      margin-bottom: 0.4em
+    
+  
+
+  .hint 
+    clear: left
+    margin-bottom: 0.4em
+    font-size: 0.9em
+    color: $COLOR-TEXT_OFFSET
+    display: block
+  div.input.boolean
+    .hint
+      padding-left: 1.35em
+      margin-bottom: 0.3em
+
+  h3
+    margin-top: 2.5em
+    margin-bottom: 1.5em
+    padding-bottom: 0.3em
+    border-bottom: solid 1px silver
+  h4
+    margin-top: 1.5em 
+    font-weight: bold
+
+  fieldset
+    legend
+      margin-top: 1.5em
+
+  // Submit button and other stuff below the form
+
+  .actions, .links
+    +grid(10)
+    +prefix(6)
+    padding-bottom: 1em
+    padding-top: 2em
+  .actions
+    border-top: solid 1px silver
+    background: $GRAY-VERY-LIGHT
+
+  input[type='submit']
+    margin-bottom: 1em
+
+  a 
+    line-height: 2em
+
+
