@@ -1,11 +1,15 @@
 Jobszy::Application.routes.draw do
-  #get \"users\/show\"
+  
+  devise_for :users
+
+  resources :users do
+      resources :jobs, controller: 'users/jobs'
+      resource :advertisement, controller: 'users/advertisements'
+  end
+
+  resources :jobs
 
   root :to => "home#index"
-
-  devise_for :users
-  resources :users, :only => :show
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

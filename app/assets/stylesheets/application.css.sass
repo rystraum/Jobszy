@@ -6,3 +6,45 @@
 @import defaults
 @import simple_form
 
+@import home
+
+header
+  h1
+    margin-bottom: 14px
+    font-size: 40px
+
+#location_header
+  #tagline
+    +grid(5)
+    +alpha
+    +prefix(1)
+    margin-top: 40px
+    margin-bottom: 20px
+    h2
+      font-size: 32px
+      color: $DEFAULT-COLOR-FONT
+  #location
+    float: right 
+    margin-top: 40px
+    #location_name
+      width: 440px
+    strong
+      display: block
+      color: $BLUE
+      font-size: 18px
+      margin-bottom: 5px
+      .understate
+        color: $GRAY
+        font-weight: normal
+.logo
+  display: inline
+  font-weight: bold
+  .z
+    color: $PINK
+  .j
+    vertical-align: bottom
+    font-size: 1.6em
+    position: relative
+    top: 0.04em
+    left: 0.07em
+

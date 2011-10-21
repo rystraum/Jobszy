@@ -1,0 +1,17 @@
+%h1 Listing users_jobs
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @users_jobs.each do |users_job|
+    %tr
+      %td= link_to 'Show', users_job
+      %td= link_to 'Edit', edit_users_job_path(users_job)
+      %td= link_to 'Destroy', users_job, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Job', new_users_job_path

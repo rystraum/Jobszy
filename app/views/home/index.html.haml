@@ -1,3 +1,78 @@
-%h3 Home
-- @users.each do |user|
-  %p User: #{link_to user.name, user}
+-# #hire
+  -# %h3 Hire someone
+  -# %p= link_to "Post a job", new_user_job_path(current_user || '_'), class: 'button path'
+
+-# #work
+  -# %h3 Get hired
+  -# %p= link_to 'Advertise yourself', new_user_advertisement_path(current_user || '_'), class: 'button path'
+
+#categories
+  %h2 Post or find a job by category
+  %ul
+    %li Accounting
+    %li Animal care
+    %li Babysitting
+    %li Construction 
+    %li Cooking
+    %li Driving and chauffeuring
+    %li Electrical
+    %li Errands
+    %li Exercise training
+    %li House chores
+    %li Massage
+    %li Painting
+    %li Plumbing
+    %li Secretarial
+    %li Social and dating
+    %li Sports
+    %li Tutoring
+    %li Yard work
+    %li.last and many more!
+
+%h2 New jobs
+#job_feed
+  %table
+    - @jobs.each do |job|
+      %tr
+        %td.title #{link_to job.title, job} &nbsp; $#{job.pay}
+        %td.datetime= job.is_urgent ? "<strong>Urgent!</strong>".html_safe : job.start_at.try(:strftime, "%b %d") || "Anytime"
+        %td.location= link_to job.location_name, "#"
+
+%h2 Featured job
+#featured_job
+
+%h2 Notable workers
+#worker_feed
+  %ul
+    %li= image_tag('person1.jpg')
+    %li= image_tag('person2.jpg')
+    %li= image_tag('person3.jpg')
+    %li= image_tag('person4.jpg')
+    %li= image_tag('person5.jpg')
+
+#bottom_marketing= image_tag('bottom_marketing.png')
+
+%ul#site_links
+  %li Collections
+  %li iPhone App
+  %li About
+  %li Safety
+  %li Contact
+  %li Jobszy Jobs
+  %li Blog
+  %li Help
+  %li Terms & Privacy
+  %li.last Top Cities
+
+#join_us
+  %strong Join us on:
+  %ul
+    %li Twitter
+    %li Facebook
+    %li.last Youtube
+
+
+
+
+
+

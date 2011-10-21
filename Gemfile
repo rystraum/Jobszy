@@ -14,9 +14,9 @@ if HOST_OS =~ /linux/i
   gem 'therubyracer', '>= 0.8.2'
 end
 
-gem "pry"
+gem "pry", group: :development
 gem "inherited_resources"
-gem "faker"
+gem "faker", group: [:development, :test]
 gem "simple_form"
 
 gem "haml", ">= 3.1.2"
@@ -28,7 +28,7 @@ gem "rspec-rails", ">= 2.6.1", :group => [:development, :test]
 gem "database_cleaner", ">= 0.6.7", :group => :test
 gem "mongoid-rspec", ">= 1.4.4", :group => :test
 gem "factory_girl_rails", ">= 1.2.0", :group => :test
-gem "spork", group: :test
+gem "spork", ">= 0.9.0.rc9", group: :test
 
 gem "guard", ">= 0.6.2", :group => :development
 case HOST_OS

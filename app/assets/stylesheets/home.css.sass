@@ -1,0 +1,89 @@
+#home--index
+  #hire, #work
+    margin-bottom: 40px
+    margin-top: 30px
+    h3
+      margin-top: 0
+      margin-bottom: 5px
+  #hire
+    +grid(4)
+    +prefix(1)
+    +alpha
+  #work
+    +grid(4)
+
+  h2
+    border: none
+    margin-top: 30px
+    margin-bottom: 10px
+    padding: 0
+    color: $BLUE
+    font-size: 20px
+  #job_feed
+    height: 200px
+    table
+      line-height: 1.5em
+      width: 100%
+      .title
+        width: 70%
+        font-weight: bold
+      .location
+        text-align: right
+  #featured_job
+    background: $GRAY-VERY-LIGHT
+    +border-radius(5px)
+    height: 200px
+  #worker_feed
+    +clearfix
+    background: $GRAY-VERY-LIGHT
+    +border-radius(5px)
+    padding: 10px 20px
+    > ul > li
+      +grid(3)
+      background: $GRAY
+      height: 180px
+      overflow: hidden
+      img
+        width: 100%
+    
+      
+  #categories, #site_links, #join_us
+    li
+      display: inline
+      color: $PINK-DARK
+    li:after
+      content: " | "
+      padding-right: 5px
+      padding-left: 5px
+      color: $GRAY
+    li.last:after
+      content: none
+
+  #categories
+    background: $GRAY-VERY-LIGHT
+    +border-radius(5px)
+    padding: 10px
+    line-height: 1.5em
+    margin-bottom: 50px
+    h2
+      margin-top: 0
+      margin-bottom: 10px
+    li.last
+      font-weight: bold
+      color: $BLUE
+
+  #bottom_marketing
+    margin-top: 50px
+    text-align: center
+  
+  #site_links, #join_us
+    margin-top: 30px
+    font-size: 0.8em
+    text-align: center
+  #join_us
+    margin-top: 10px
+    ul
+      display: inline
+      padding-left: 5px
+      
+

@@ -1,0 +1,17 @@
+%h1 Listing users_advertisements
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @users_advertisements.each do |users_advertisement|
+    %tr
+      %td= link_to 'Show', users_advertisement
+      %td= link_to 'Edit', edit_users_advertisement_path(users_advertisement)
+      %td= link_to 'Destroy', users_advertisement, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Advertisement', new_users_advertisement_path

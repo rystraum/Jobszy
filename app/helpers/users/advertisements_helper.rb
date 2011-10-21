@@ -1,0 +1,2 @@
+module Users::AdvertisementsHelper
+end

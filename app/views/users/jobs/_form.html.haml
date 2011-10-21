@@ -1,0 +1,12 @@
+= simple_form_for [@user, @job] do |f|
+
+  = f.error_notification
+
+  = f.input :title
+  = f.input :pay
+  = f.input :start_at, as: :datetime
+  = f.input :is_urgent, as: :boolean
+  = f.input :location_name
+
+  .actions
+    = f.button :submit

@@ -12,6 +12,7 @@ $GREEN-VERY-LIGHT: #CFC
 $PINK: #FF0080
 $PINK-VERY-LIGHT: tint($PINK, 90%)
 $PINK-LIGHT: tint($PINK, 25%)
+$PINK-DARK: rgb(166, 0, 95)
 
 
 // COLORED ELEMENTS
@@ -49,14 +50,15 @@ body
 
 #outer_content
   padding-top: 30px
-  padding-bottom: 150px
+  padding-bottom: 80px
 
 #outer_footer
   background: $DEFAULT-COLOR-FONT
 
 header
-  height: 60px
-  #logo
+  min-height: 60px
+  margin-bottom: 10px
+  #logo_ctr
     +grid(8)
     +alpha
     a
@@ -70,7 +72,7 @@ header
     +grid(8)
     +omega
     text-align: right
-    margin-top: 20px
+    margin-top: 24px
     li
       display: inline
       list-style: none
@@ -89,12 +91,12 @@ ul
   padding: 0
 
 a
-  color: $PINK
+  color: $PINK-DARK
   text-decoration: none
   &:hover
     text-decoration: underline
   &:visited
-    color: $PINK
+    color: $PINK-DARK
 
 h2
   font-size: 28px
@@ -126,16 +128,31 @@ h3
   background-color: $PINK-VERY-LIGHT 
 
 
-// Forms
+// FORMS
 
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='tel'],
+textarea,
+input.boolean
+  +border-radius(3px)
+  +box-shadow(inset 0 1px 3px rgba(0, 0, 0, 0.1))
+  border: 1px solid silver
+  padding: 10px 5px
+  color: $BLUE
+    
 input[type='submit'],
 a.button.path,
   +button(shiny, $PINK-LIGHT) 
+  +box-shadow(2px 2px 2px 0 silver)
+
 
 button, 
 a.button.local,
 input[type='submit'].local
   +button(shiny, $BLUE-LIGHT)
+  +box-shadow(1px 1px 1px 0 silver)
 
 a.button.small, 
 input.button.small

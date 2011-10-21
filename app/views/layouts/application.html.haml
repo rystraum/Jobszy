@@ -7,14 +7,27 @@
     = stylesheet_link_tag :application
     = javascript_include_tag :application
     = csrf_meta_tags
-  %body{:class => params[:controller]}
+  %body{lang: 'en', id: body_id}
     #sticky_footer_top_wrapper
       #outer_header
         .outer_grid
           %header
-            #logo
-              %h1= link_to "Jobszy", root_path
+            #logo_ctr
+              %h1= link_to jobszy, root_path
             = render 'shared/header_nav'
+      #outer_location_header
+        .outer_grid
+          #location_header
+            #tagline
+              %h2 Quick, local jobs.
+            #location_ctr
+              #location
+                %strong
+                  Set your location
+                  %span.understate to see jobs and workers near you
+                = form_tag '/locations/new' do |f|
+                  = text_field_tag 'location[name]'
+                  = submit_tag 'Go', class: 'local'
       - unless flash.blank?
         - flash.each do |name, msg|
           %div{ id: "flash_#{name}" }

@@ -1,5 +1,7 @@
 %nav
   %ul
+    %li= link_to 'Post a job', new_user_job_path(current_user || '_')
+    %li= link_to 'Find a job', new_user_advertisement_path(current_user || '_')
     - if user_signed_in?
       %li
         = link_to('Sign up', destroy_user_session_path, :method=>'delete')
